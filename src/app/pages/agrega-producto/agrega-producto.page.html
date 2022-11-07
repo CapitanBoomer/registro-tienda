@@ -1,0 +1,279 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Agregar producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="formulario" (ngSubmit)="guardarDatos()">
+    <ion-item>
+      <ion-label position="floating">Nombre Producto</ion-label>
+      <ion-input type="text" formControlName="nombre"></ion-input>
+      <ion-note slot="error" *ngIf="campo('nombre').invalid &&
+                      campo('nombre').errors  &&
+                      campo('nombre').errors.required &&
+                      tocado('nombre')
+
+      ">
+        Este campo es requerido
+      </ion-note>
+      <ion-note slot="error" *ngIf="campo('nombre').invalid &&
+                      campo('nombre').errors  &&
+                      campo('nombre').errors.maxlegth &&
+                      tocado('nombre')
+
+      ">
+        Excedes el máximo de caracteres
+      </ion-note>
+      <ion-note slot="error" *ngIf="campo('nombre').invalid &&
+                      campo('nombre').errors  &&
+                      campo('nombre').errors.minlegth &&
+                      tocado('nombre')
+
+      ">
+        No cumple el mínimo de caracteres
+      </ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-input [disabled]="cargandoImagen" (change)="leerArchivo($event)" type="file" formControlName="foto"></ion-input>
+      <ion-note slot="error" *ngIf="campo('foto').invalid &&
+                      campo('foto').errors  &&
+                      campo('foto').errors.required &&
+                      tocado('foto')
+
+      ">
+        Este campo es requerido
+      </ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Marca</ion-label>
+      <ion-input type="text" formControlName="marca"></ion-input>
+      <ion-note slot="error" *ngIf="campo('marca').invalid &&
+                      campo('marca').errors  &&
+                      campo('marca').errors.required &&
+                      tocado('marca')
+
+      ">
+        Este campo es requerido
+      </ion-note>
+      <ion-note slot="error" *ngIf="campo('marca').invalid &&
+                      campo('marca').errors  &&
+                      campo('marca').errors.maxlegth &&
+                      tocado('marca')
+
+      ">
+        Excedes el máximo de caracteres
+      </ion-note>
+      <ion-note slot="error" *ngIf="campo('marca').invalid &&
+                      campo('marca').errors  &&
+                      campo('marca').errors.minlegth &&
+                      tocado('marca')
+
+      ">
+        No cumple el mínimo de caracteres
+      </ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Precio compra</ion-label>
+      <ion-input type="number" formControlName="precio_compra"></ion-input>
+      <ion-note slot="error" *ngIf="campo('precio_compra').invalid &&
+                      campo('precio_compra').errors  &&
+                      campo('precio_compra').errors.required &&
+                      tocado('precio_compra')
+
+      ">
+        Este campo es requerido
+      </ion-note>
+
+      <ion-note slot="error" *ngIf="campo('precio_compra').invalid &&
+                      campo('precio_compra').errors  &&
+                      campo('precio_compra').errors.max &&
+                      tocado('precio_compra')
+
+      ">
+        El precio máximo de compra es de 200000
+      </ion-note>
+
+      <ion-note slot="error" *ngIf="campo('precio_compra').invalid &&
+                      campo('precio_compra').errors  &&
+                      campo('precio_compra').errors.min&&
+                      tocado('precio_compra')
+
+      ">
+        El precio mínimo de compra es de 500
+      </ion-note>
+
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Precio venta</ion-label>
+      <ion-input type="number" formControlName="precio_venta"></ion-input>
+      <ion-note slot="error" *ngIf="campo('precio_venta').invalid &&
+                      campo('precio_venta').errors  &&
+                      campo('precio_venta').errors.required &&
+                      tocado('precio_venta')
+
+      ">
+        Este campo es requerido
+      </ion-note>
+
+      <ion-note slot="error" *ngIf="campo('precio_venta').invalid &&
+                      campo('precio_venta').errors  &&
+                      campo('precio_venta').errors.max &&
+                      tocado('precio_venta')
+
+      ">
+        El precio máximo de venta es de 500000
+      </ion-note>
+
+      <ion-note slot="error" *ngIf="campo('precio_venta').invalid &&
+                      campo('precio_venta').errors  &&
+                      campo('precio_venta').errors.min &&
+                      tocado('precio_venta')
+
+      ">
+        El precio mínimo de venta es de 500
+      </ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Largo cm</ion-label>
+      <ion-input type="number" formControlName="largo"></ion-input>
+
+      <ion-note slot="error" *ngIf="campo('largo').invalid &&
+                      campo('largo').errors  &&
+                      campo('largo').errors.required &&
+                      tocado('largo')
+
+      ">
+        Este campo es requerido
+      </ion-note>
+      <ion-note slot="error" *ngIf="campo('largo').invalid &&
+                      campo('largo').errors  &&
+                      campo('largo').errors.max &&
+                      tocado('largo')
+
+      ">
+        El maximo de centimetros para largo es 400
+      </ion-note>
+      <ion-note slot="error" *ngIf="campo('largo').invalid &&
+                      campo('largo').errors  &&
+                      campo('largo').errors.min &&
+                      tocado('largo')
+
+      ">
+        El mínimo de centimetros para largo es 1
+      </ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Ancho cm</ion-label>
+      <ion-input type="number" formControlName="ancho"></ion-input>
+      <ion-note slot="error" *ngIf="campo('ancho').invalid &&
+                      campo('ancho').errors  &&
+                      campo('ancho').errors.required &&
+                      tocado('ancho')
+
+      ">
+        Este campo es requerido
+      </ion-note>
+      <ion-note slot="error" *ngIf="campo('ancho').invalid &&
+                      campo('ancho').errors  &&
+                      campo('ancho').errors.max &&
+                      tocado('ancho')
+
+      ">
+      El maximo de centimetros para largo es 400
+      </ion-note>
+      <ion-note slot="error" *ngIf="campo('ancho').invalid &&
+                      campo('ancho').errors  &&
+                      campo('ancho').errors.min &&
+                      tocado('ancho')
+
+      ">
+      El mínimo de centimetros para largo es 1
+      </ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Proveedor</ion-label>
+      <ion-select formControlName="proveedor">
+        <ion-select-option
+          *ngFor="let proveedor of proveedores"
+          [value]="proveedor"
+          >
+            {{proveedor}}
+        </ion-select-option>
+      </ion-select>
+      <ion-note slot="error" *ngIf="campo('proveedor').invalid &&
+                      campo('proveedor').errors  &&
+                      campo('proveedor').errors.required &&
+                      tocado('proveedor')
+      ">
+        Este campo es requerido
+      </ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Stock</ion-label>
+      <ion-input type="number" formControlName="stock"></ion-input>
+      <ion-note slot="error" *ngIf="campo('stock').invalid &&
+                      campo('stock').errors  &&
+                      campo('stock').errors.required &&
+                      tocado('stock')
+
+      ">
+        Este campo es requerido
+      </ion-note>
+      <ion-note slot="error" *ngIf="campo('stock').invalid &&
+                      campo('stock').errors  &&
+                      campo('stock').errors.max &&
+                      tocado('stock')
+
+      ">
+        El stock máximo es de 10000 unidades
+      </ion-note>
+      <ion-note slot="error" *ngIf="campo('stock').invalid &&
+                      campo('stock').errors  &&
+                      campo('stock').errors.min &&
+                      tocado('stock')
+
+      ">
+        El stock mínimo es de 1
+      </ion-note>
+
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Fecha elaboración</ion-label>
+      <ion-datetime formControlName="fecha_elaboracion"presentation="month-year"></ion-datetime>
+      <ion-note slot="error" *ngIf="campo('fecha_elaboracion').invalid &&
+                      campo('fecha_elaboracion').errors  &&
+                      campo('fecha_elaboracion').errors.required &&
+                      tocado('fecha_elaboracion')
+
+      ">
+        Este campo es requerido
+      </ion-note>
+      <ion-note slot="error" *ngIf="campo('fecha_elaboracion').invalid &&
+                      campo('fecha_elaboracion').errors  &&
+                      campo('fecha_elaboracion').errors.min &&
+                      tocado('fecha_elaboracion')
+
+      ">
+        El año mínimo de elaboración es de 2014
+      </ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-button type="submit" [disabled]="formulario.invalid && !cargandoImagen" type="submit">Guardar producto</ion-button>
+    </ion-item>
+  </form>
+
+</ion-content>

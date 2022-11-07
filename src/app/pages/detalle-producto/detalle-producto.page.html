@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>detalle-producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-content>
+    <ion-card *ngIf="productoActivo">
+      <ion-img [src]="productoActivo.foto" loading="lazy"></ion-img>
+      <ion-card-header>
+        <ion-card-title>
+          Nombre : {{productoActivo.nombre}}
+          <br>
+          Precio : ${{productoActivo.precio_venta}}
+        </ion-card-title>
+        <ion-card-subtitle>Proveedor :{{productoActivo.proveedor}}</ion-card-subtitle>
+        <ion-label>Fecha elaboracion :{{productoActivo.fecha_elaboracion}}</ion-label>
+      </ion-card-header>
+    </ion-card>
+</ion-content>
