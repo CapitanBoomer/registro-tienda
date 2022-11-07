@@ -3,7 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path : '',
+    path : 'listar-producto',
     loadChildren: ()=> import('./pages/lista-producto/lista-producto.module').then(m => m.ListaProductosPageModule)
   },
   {
@@ -25,6 +25,10 @@ const routes: Routes = [
   {
     path: 'registro',
     loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
+  },
+  {
+    path: '',
+    loadChildren: () => import('./pages/menu-principal/menu-principal.module').then( m => m.MenuPrincipalPageModule)
   },
 
 ];

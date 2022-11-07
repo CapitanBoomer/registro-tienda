@@ -77,8 +77,8 @@ export class AgregaProductoPage implements OnInit {
       foto : this.imagenBase64
     })
     .subscribe(data => {
-      this.router.navigate(['']);
-      alert('producto agregado con exito ')
+      this.router.navigate(['/listar-producto']);
+
     })
   }
 

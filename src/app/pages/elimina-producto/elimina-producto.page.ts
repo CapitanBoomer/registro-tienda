@@ -26,7 +26,7 @@ export class EliminaProductoPage implements OnInit {
         if(producto){
           this.productoActivo = producto;
         }else {
-          this.router.navigate(['']);
+          this.router.navigate(['/listar-producto']);
         }
       })
     })
@@ -35,8 +35,8 @@ export class EliminaProductoPage implements OnInit {
   public borrar(){
     this.apiProducto.eliminaPorId(+this.idActiva).subscribe(dato =>{
       if(dato){
-        alert('¡ Borrado con éxito! ');
-        this.router.navigate(['']);
+
+        this.router.navigate(['/listar-producto']);
       }
     })
   }

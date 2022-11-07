@@ -85,7 +85,7 @@ export class ModificaProductoPage implements OnInit {
     })
     .subscribe(data => {
       this.router.navigate(['']);
-      alert('producto modificado con exito ')
+
     })
   }
 
@@ -101,7 +101,7 @@ export class ModificaProductoPage implements OnInit {
           });
           this.formulario.updateValueAndValidity();
         }else{
-          this.router.navigate([''])
+          this.router.navigate(['/listar-producto'])
         }
       })
     })

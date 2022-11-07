@@ -57,7 +57,7 @@ export class RegistroPage implements OnInit {
     })
       .subscribe(data => {
         this.router.navigate(['login']);
-        alert('usuario agregado ')
+
       })
   }
 

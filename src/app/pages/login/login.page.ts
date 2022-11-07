@@ -43,11 +43,11 @@ export class LoginPage implements OnInit {
     });
     console.log(this.formulario.value)
     if (this.usuario) {
-      if (this.usuario.pass == this.formulario.value.pass) { if (this.usuario.admin == '1') { this.router.navigate(['']) }
-      else { alert("no es admin") } }
-      else { alert("no pase") }
+      if (this.usuario.pass == this.formulario.value.pass) { if (this.usuario.admin == '1') { this.router.navigate(['listar-producto']) }
+      else {  } }
+      else { }
     }
-    else { alert("no existe") }
+    else {  }
   }
 
 }
