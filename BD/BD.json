@@ -15,6 +15,11 @@
       "nombre_usuario": "sata",
       "pass": "1234",
       "id": 3
+    },
+    {
+      "nombre_usuario": "sataa",
+      "pass": "1234",
+      "id": 4
     }
   ],
   "productos": [
@@ -29,7 +34,7 @@
       "color": "Negro",
       "proveedor": "Shunn Autos SPA",
       "patente": "AX7021",
-      "fecha_fabricacion": "1970-11",
+      "fecha_fabricacion": "1970-12",
       "id": 1
     }
   ]

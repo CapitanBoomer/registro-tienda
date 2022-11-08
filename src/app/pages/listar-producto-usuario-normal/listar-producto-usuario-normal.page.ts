@@ -34,7 +34,6 @@ export class ListarProductoUsuarioNormalPage implements OnInit {
   }
 
   ionViewDidEnter(): void{
-    console.log('Entró a la pagina')
   }
 
   public cargarMasProds(){

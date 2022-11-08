@@ -14,7 +14,8 @@ export class ProductoServiceService {
   public listarProductos$ = this.comportamientoListar.asObservable();
   private paginaActual = 0;
   private comportamientoListarUser = new BehaviorSubject<Array<any>>([]);
-  public listarUsers = this.comportamientoListarUser.asObservable();
+  public listarUsers$ = this.comportamientoListarUser.asObservable();
+
   constructor(
     private cliente : HttpClient
   ) { }
@@ -27,15 +28,15 @@ export class ProductoServiceService {
     })
   }
 
-  public agregarUsuario(nuevousuario : Usuarios): Observable<any>{
-    return this.cliente.post(this.API_usuario_URL, nuevousuario,{
+  public agregarUsuario(nuevoUsuario : Usuarios): Observable<any>{
+    return this.cliente.post(this.API_usuario_URL, nuevoUsuario,{
       headers :{
         'Content-Type': 'application/json; charset=utf-8'
       }
     })
   }
 
-  public iniciosesion(){
+  public inicioSesion(){
     this.cliente.get<Array<Usuarios>>(`${this.API_usuario_URL}?_page=1&_limit=5`)
     .subscribe(datos => {this.comportamientoListarUser.next(datos)})
   }

@@ -1,12 +1,12 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-card>
-    <form [formGroup]="formulario" (ngSubmit)="iniciarsesion()">
+    <form [formGroup]="formulario" (ngSubmit)="iniciarSesion()">
       <ion-item>
         <ion-label position="floating">Nombre usuario</ion-label>
         <ion-input type="text" formControlName="nombre_usuario"></ion-input>
@@ -15,11 +15,11 @@
 
 
       <ion-item>
-        <ion-label position="floating">contraseña</ion-label>
+        <ion-label position="floating">Contraseña</ion-label>
         <ion-input type="password" formControlName="pass"></ion-input>
       </ion-item>
         <ion-item>
-          <ion-button type="submit" type="submit">iniciar sesion
+          <ion-button type="submit" type="submit">Iniciar sesión
           </ion-button>
         </ion-item>
 

@@ -3,27 +3,29 @@ import { ProductoServiceService } from "./../../services/producto-service.servic
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Usuarios } from 'src/app/interfaces/usuarios';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
+
 export class LoginPage implements OnInit {
-  public usurioinicio: Array<any> = [];
+  public usurioInicio: Array<any> = [];
   public formulario: FormGroup;
   public usuario: Usuarios;
   constructor(
     private apiUsuario: ProductoServiceService, private fb: FormBuilder, private router : Router
-  ) { this.formularioinicio(); }
+  ) { this.formularioInicio(); }
 
   ngOnInit() {
-    this.apiUsuario.listarUsers.subscribe(datos => { this.usurioinicio = datos; console.log(datos) });
-    this.apiUsuario.iniciosesion();
-    console.log(this.usurioinicio)
+    this.apiUsuario.listarUsers$.subscribe(datos => { this.usurioInicio = datos; console.log(datos) });
+    this.apiUsuario.inicioSesion();
+    console.log(this.usurioInicio)
   }
-  public iniciar() { console.log(this.usurioinicio) };
+  public iniciar() { console.log(this.usurioInicio) };
 
-  public formularioinicio() {
+  public formularioInicio() {
     this.formulario = this.fb.group({
       nombre_usuario: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
       pass: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(1000)]),
@@ -36,8 +38,8 @@ export class LoginPage implements OnInit {
     return this.formulario.get(control).touched;
   }
 
-  public iniciarsesion() {
-    this.usuario = this.usurioinicio.find(user => {
+  public iniciarSesion() {
+    this.usuario = this.usurioInicio.find(user => {
       let inicio = this.formulario.value.nombre_usuario
       return user.nombre_usuario === inicio
     });

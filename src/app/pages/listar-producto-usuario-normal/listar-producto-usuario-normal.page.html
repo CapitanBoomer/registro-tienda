@@ -4,19 +4,14 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title
-    >Normal
+    >Venta de autos
     <ion-icon
-    name="car-sport"></ion-icon>
+    name="car"></ion-icon>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button [routerLink]="['/agrega-producto']">
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
   <!--Listdo de productos-->
   <ion-card *ngFor="let producto of listaProductos">
     <ion-img [src]="producto.foto" loading="lazy"></ion-img>
@@ -27,7 +22,7 @@
         Precio : ${{producto.precio_venta}}
       </ion-card-title>
       <ion-card-subtitle>Proveedor :{{producto.proveedor}}</ion-card-subtitle>
-      <ion-label>Fecha elaboracion :{{producto.fecha_fabricacion}}</ion-label>
+      <ion-label>Fecha fabricación :{{producto.fecha_fabricacion}}</ion-label>
       <ion-card-content>
         <ion-button
         expand="block"
@@ -38,36 +33,6 @@
         >
           Detalle vehiculo
           <ion-icon slot="end" name="search"></ion-icon>
-        </ion-button>
-
-
-
-        <ion-button
-        expand="block"
-        shape="round"
-        color="danger"
-        size="small"
-        [routerLink]="['/elimina-producto', producto.id]"
-        >
-        Eliminar
-          <ion-icon
-          slot="end"
-          name="trash"
-          >
-          </ion-icon>
-        </ion-button>
-
-        <ion-button
-        expand="block"
-        shape="round"
-        size="small"
-        [routerLink]="['/modifica-producto',producto.id]"
-        >
-        Modificar
-          <ion-icon
-          slot="end"
-          name="build">
-          </ion-icon>
         </ion-button>
 
       </ion-card-content>
