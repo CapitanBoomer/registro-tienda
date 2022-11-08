@@ -10,9 +10,12 @@ export class ProductoServiceService {
 
   private API_PRODUCTOS_URL = 'http://localhost:3000/productos'
   private API_usuario_URL = 'http://localhost:3000/usuarios'
+
+  private paginaActual = 0;
+
   private comportamientoListar = new BehaviorSubject<Array<ProductoConId>>([]);
   public listarProductos$ = this.comportamientoListar.asObservable();
-  private paginaActual = 0;
+
   private comportamientoListarUsuario = new BehaviorSubject<Array<any>>([]);
   public listarUsers$ = this.comportamientoListarUsuario.asObservable();
 
@@ -121,4 +124,7 @@ export class ProductoServiceService {
       }
     });
   }
+
+
+
 }
