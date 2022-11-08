@@ -27,6 +27,7 @@ export class RegistroPage implements OnInit {
     this.formularioRegistro = this.fb.group({
       'nombre_usuario': new FormControl("", Validators.required),
       'pass': new FormControl("", Validators.required),
+      'admin': new FormControl(false, Validators.required)
 
     });
   }
@@ -39,13 +40,9 @@ export class RegistroPage implements OnInit {
     this.formularioRegistro = this.fb.group({
       nombre_usuario: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
       pass: new FormControl(0, [Validators.required, Validators.minLength(20), Validators.maxLength(30)]),
-
+      admin: new FormControl(false, [Validators.required])
     })
   }
-
-
-
-
 
   public guardarDatos() {
     if (this.formularioRegistro.invalid) {

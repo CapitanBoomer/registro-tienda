@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Producto, ProductoConId } from '../interfaces/producto'
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Usuarios } from '../interfaces/usuarios';
+import { UsuarioConID, Usuarios } from '../interfaces/usuarios';
 
 @Injectable()
 
@@ -13,8 +13,8 @@ export class ProductoServiceService {
   private comportamientoListar = new BehaviorSubject<Array<ProductoConId>>([]);
   public listarProductos$ = this.comportamientoListar.asObservable();
   private paginaActual = 0;
-  private comportamientoListarUser = new BehaviorSubject<Array<any>>([]);
-  public listarUsers$ = this.comportamientoListarUser.asObservable();
+  private comportamientoListarUsuario = new BehaviorSubject<Array<any>>([]);
+  public listarUsers$ = this.comportamientoListarUsuario.asObservable();
 
   constructor(
     private cliente : HttpClient
@@ -38,8 +38,26 @@ export class ProductoServiceService {
 
   public inicioSesion(){
     this.cliente.get<Array<Usuarios>>(`${this.API_usuario_URL}?_page=1&_limit=5`)
-    .subscribe(datos => {this.comportamientoListarUser.next(datos)})
+    .subscribe(datos => {this.comportamientoListarUsuario.next(datos)})
   }
+
+  public listarUsuarios(){
+    this.cliente.get<Array<UsuarioConID>>(`${this.API_usuario_URL}?_page=1&_limit=5`)
+    .subscribe(datos => {
+      this.paginaActual = this.paginaActual + 1;
+      this.comportamientoListarUsuario.next(datos);
+    })
+  }
+
+  public listaPrimerosUser(){
+    this.cliente.get<Array<UsuarioConID>>(`${this.API_usuario_URL}?_page=1&_limit=5`)
+    .subscribe(datos => {
+      this.paginaActual = this.paginaActual + 1;
+      this.comportamientoListarUsuario.next(datos);
+    })
+  }
+
+
 
   public listaPrimerosProds(){
     this.cliente.get<Array<ProductoConId>>(`${this.API_PRODUCTOS_URL}?_page=1&_limit=5`)
@@ -48,6 +66,19 @@ export class ProductoServiceService {
       this.comportamientoListar.next(datos);
     })
   }
+
+
+  public mostrarMasUsers(){
+    this.cliente.get<Array<UsuarioConID>>(`${this.API_usuario_URL}?_page=${this.paginaActual}&_limit=5`)
+    .subscribe(datos => {
+      if(datos){
+        this.paginaActual = this.paginaActual + 1;
+        this.comportamientoListarUsuario.next(this.comportamientoListarUsuario.getValue().concat(datos));
+      }
+
+    })
+  }
+
 
   public mostrarMasProds(){
     this.cliente.get<Array<ProductoConId>>(`${this.API_PRODUCTOS_URL}?_page=${this.paginaActual}&_limit=5`)

@@ -300,9 +300,9 @@
 
     <ion-item>
       <ion-button
+      [routerLink]="['/listar-producto']"
       type="submit"
       [disabled]="formulario.invalid && !cargandoImagen"
-      [routerLink]="['/listar-producto']"
       >
       Guardar producto
       </ion-button>

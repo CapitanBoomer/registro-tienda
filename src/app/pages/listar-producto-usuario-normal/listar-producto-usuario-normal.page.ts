@@ -3,6 +3,7 @@ import { ProductoConId } from 'src/app/interfaces/producto';
 import { ProductoServiceService } from 'src/app/services/producto-service.service';
 import {IonInfiniteScroll} from '@ionic/angular';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-listar-producto-usuario-normal',
   templateUrl: './listar-producto-usuario-normal.page.html',

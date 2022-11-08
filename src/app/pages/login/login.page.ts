@@ -45,7 +45,7 @@ export class LoginPage implements OnInit {
     });
     console.log(this.formulario.value)
     if (this.usuario) {
-      if (this.usuario.pass == this.formulario.value.pass) { if (this.usuario.admin == '1') { this.router.navigate(['listar-producto']) }
+      if (this.usuario.pass == this.formulario.value.pass) { if (this.usuario.admin == true) { this.router.navigate(['listar-producto']) }
       else { this.router.navigate(['listar-producto-usuario-normal']) } }
       else { }
     }

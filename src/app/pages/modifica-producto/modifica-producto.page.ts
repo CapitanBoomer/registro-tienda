@@ -85,7 +85,7 @@ export class ModificaProductoPage implements OnInit {
       foto : this.imagenBase64
     })
     .subscribe(data => {
-      this.router.navigate(['']);
+      this.router.navigate(['/listar-producto']);
 
     })
   }

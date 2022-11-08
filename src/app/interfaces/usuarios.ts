@@ -2,10 +2,10 @@ export interface Usuarios {
   id: string,
   nombre_usuario:string,
   pass:string,
-  admin?:string,
+  admin?:boolean,
 }
 
-export interface UsusarioConID extends Usuarios{
+export interface UsuarioConID extends Usuarios{
   id: string;
 }
 
