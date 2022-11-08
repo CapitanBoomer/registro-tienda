@@ -12,14 +12,9 @@
       "id": 2
     },
     {
-      "nombre_usuario": "ivan",
-      "pass": "shunnteamo",
+      "nombre_usuario": "sata",
+      "pass": "1234",
       "id": 3
-    },
-    {
-      "nombre_usuario": "diego",
-      "pass": "contra",
-      "id": 4
     }
   ],
   "productos": [

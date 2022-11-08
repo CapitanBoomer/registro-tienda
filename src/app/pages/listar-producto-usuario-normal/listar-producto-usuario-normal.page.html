@@ -1,0 +1,82 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title
+    >Normal
+    <ion-icon
+    name="car-sport"></ion-icon>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button [routerLink]="['/agrega-producto']">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <!--Listdo de productos-->
+  <ion-card *ngFor="let producto of listaProductos">
+    <ion-img [src]="producto.foto" loading="lazy"></ion-img>
+    <ion-card-header>
+      <ion-card-title>
+        Nombre : {{producto.nombre}}
+        <br>
+        Precio : ${{producto.precio_venta}}
+      </ion-card-title>
+      <ion-card-subtitle>Proveedor :{{producto.proveedor}}</ion-card-subtitle>
+      <ion-label>Fecha elaboracion :{{producto.fecha_fabricacion}}</ion-label>
+      <ion-card-content>
+        <ion-button
+        expand="block"
+        shape="round"
+        size="small"
+        color="success"
+        [routerLink]="['/detalle', producto.id]"
+        >
+          Detalle vehiculo
+          <ion-icon slot="end" name="search"></ion-icon>
+        </ion-button>
+
+
+
+        <ion-button
+        expand="block"
+        shape="round"
+        color="danger"
+        size="small"
+        [routerLink]="['/elimina-producto', producto.id]"
+        >
+        Eliminar
+          <ion-icon
+          slot="end"
+          name="trash"
+          >
+          </ion-icon>
+        </ion-button>
+
+        <ion-button
+        expand="block"
+        shape="round"
+        size="small"
+        [routerLink]="['/modifica-producto',producto.id]"
+        >
+        Modificar
+          <ion-icon
+          slot="end"
+          name="build">
+          </ion-icon>
+        </ion-button>
+
+      </ion-card-content>
+    </ion-card-header>
+  </ion-card>
+
+  <!--Infinite scroll-->
+  <ion-infinite-scroll (ionInfinite)="cargarMasProds()">
+    <ion-infinite-scroll-content loadingText="Cargando mas productos . . .">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

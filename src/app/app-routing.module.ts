@@ -34,6 +34,17 @@ const routes: Routes = [
     path : 'detalle-producto/:idProducto',
     loadChildren: ()=> import('./pages/detalle-producto/detalle-producto.module').then(m => m.DetalleProductoPageModule)
   },
+  {
+    path: 'listar-producto-usuario-normal',
+    loadChildren: () => import('./pages/listar-producto-usuario-normal/listar-producto-usuario-normal.module').then( m => m.ListarProductoUsuarioNormalPageModule)
+  },
+  {
+    path: 'detalle/:idProducto',
+    loadChildren: () => import('./pages/detalle-producto-usuario-normal/detalle-producto-usuario-normal.module').then( m => m.DetalleProductoUsuarioNormalPageModule)
+  },
+
+
+
 
 ];
 

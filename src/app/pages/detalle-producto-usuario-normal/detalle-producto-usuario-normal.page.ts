@@ -4,11 +4,11 @@ import { ProductoConId } from 'src/app/interfaces/producto';
 import{ProductoServiceService} from './../../services/producto-service.service';
 
 @Component({
-  selector: 'app-detalle-producto',
-  templateUrl: './detalle-producto.page.html',
-  styleUrls: ['./detalle-producto.page.scss'],
+  selector: 'app-detalle-producto-usuario-normal',
+  templateUrl: './detalle-producto-usuario-normal.page.html',
+  styleUrls: ['./detalle-producto-usuario-normal.page.scss'],
 })
-export class DetalleProductoPage implements OnInit {
+export class DetalleProductoUsuarioNormalPage implements OnInit {
   public idActiva = '';
   public productoActivo : ProductoConId;
 
