@@ -17,9 +17,14 @@
 
       admin : {{usuario.admin}}
       <br>
-      <ion-toggle [enableOnOffLabels]="true" (ionChange)="hacerAdmin($event)"></ion-toggle>
+
     </ion-card-subtitle>
     <ion-card-content>
+      <ion-button
+      [routerLink]="['/modificar-usuario', usuario.id]"
+      >
+      Dar admin
+      </ion-button>
 
 
         </ion-card-content>

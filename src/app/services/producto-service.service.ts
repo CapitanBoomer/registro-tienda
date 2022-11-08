@@ -91,6 +91,10 @@ export class ProductoServiceService {
     })
   }
 
+  public buscarUsuarioId(id :number) : Observable<UsuarioConID>{
+    return this.cliente.get<UsuarioConID | null>(`${this.API_usuario_URL}/${id}`);
+  }
+
   public buscarPorId(id :number): Observable<ProductoConId>{
     return this.cliente.get<ProductoConId | null>(`${this.API_PRODUCTOS_URL}/${id}`);
   }
@@ -98,6 +102,16 @@ export class ProductoServiceService {
   public eliminaPorId(id: number): Observable<any>{
     return this.cliente.delete(`${this.API_PRODUCTOS_URL}/${id}`);
   }
+
+  public modificarUsuarioId(id:number, usuario): Observable<any>
+  {
+    return this.cliente.patch(`${this.API_usuario_URL}/${id}`,usuario,{
+      headers:{
+        'Content-Type': 'application/json; charset=utf-8'
+      }
+    });
+  }
+
 
   public modificaPorId(id : number, producto): Observable<any>
   {

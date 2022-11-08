@@ -41,10 +41,19 @@ const routes: Routes = [
   {
     path: 'detalle/:idProducto',
     loadChildren: () => import('./pages/detalle-producto-usuario-normal/detalle-producto-usuario-normal.module').then( m => m.DetalleProductoUsuarioNormalPageModule)
-  },  {
+  },
+  {
     path: 'listar-usuarios',
     loadChildren: () => import('./pages/listar-usuarios/listar-usuarios.module').then( m => m.ListarUsuariosPageModule)
   },
+  {
+    path: 'modificar-usuario/:idUsuario',
+    loadChildren: () => import('./pages/modificar-usuario/modificar-usuario.module').then( m => m.ModificarUsuarioPageModule)
+  },
+  {
+    path: 'modificar-usuario',
+    loadChildren: () => import('./pages/modificar-usuario/modificar-usuario.module').then( m => m.ModificarUsuarioPageModule)
+  }
 
 
 

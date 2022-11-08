@@ -14,6 +14,7 @@ export class ListaProductoPage implements OnInit {
 
   @ViewChild(IonInfiniteScroll)
   public infinito : IonInfiniteScroll;
+usuario: any;
 
   constructor(
     private apiProductos : ProductoServiceService,

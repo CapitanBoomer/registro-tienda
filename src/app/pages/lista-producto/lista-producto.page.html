@@ -45,6 +45,23 @@
         <ion-button
         expand="block"
         shape="round"
+        color="light"
+        size="small"
+        [routerLink]="['/listar-usuarios']"
+        >
+        Modificar Usuario
+          <ion-icon
+          slot="end"
+          name="color-wand"
+          >
+          </ion-icon>
+        </ion-button>
+
+
+
+        <ion-button
+        expand="block"
+        shape="round"
         color="danger"
         size="small"
         [routerLink]="['/elimina-producto', producto.id]"
