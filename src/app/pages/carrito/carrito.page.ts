@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { ProductoConId } from 'src/app/interfaces/producto';
-import { ProductoServiceService } from 'src/app/services/producto-service.service';
+import{ProductoServiceService} from './../../services/producto-service.service';
 
 @Component({
   selector: 'app-carrito',

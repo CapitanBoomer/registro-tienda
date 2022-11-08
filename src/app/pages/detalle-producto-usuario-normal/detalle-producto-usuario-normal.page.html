@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>normal</ion-title>
+    <ion-title>detalles</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -45,7 +45,7 @@
         expand="block"
         shape="round"
         size="small"
-        [routerLink]="['/carrito']"
+        [routerLink]="['/carrito', productoActivo.id]"
         >
           Añadir
           <ion-icon

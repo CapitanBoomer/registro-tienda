@@ -1,3 +1,5 @@
+import { Producto } from "./producto";
+
 export interface Usuarios {
   id: string,
   nombre_usuario:string,
@@ -11,4 +13,9 @@ export interface UsuarioConID extends Usuarios{
 
 export interface UsuarioParcial extends Partial <Usuarios>{
 
+}
+export interface carro  extends Producto {
+  idcarrito: string,
+  idcliente:string,
+  productos: Producto;
 }

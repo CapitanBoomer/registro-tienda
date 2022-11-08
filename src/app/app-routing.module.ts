@@ -55,7 +55,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/modificar-usuario/modificar-usuario.module').then( m => m.ModificarUsuarioPageModule)
   },
   {
-    path: 'carrito',
+    path: 'carrito/:idProducto',
     loadChildren: () => import('./pages/carrito/carrito.module').then( m => m.CarritoPageModule)
   }
 
