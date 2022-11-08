@@ -11,12 +11,12 @@ import { ProductoServiceService } from 'src/app/services/producto-service.servic
 export class AgregaProductoPage implements OnInit {
   public formulario : FormGroup;
   public proveedores : Array<string> = [
-    'Repartos S.A',
-    'Proveedores SPA',
-    'Abarrotes S.A',
-    'Repartos INC',
-    'Voladores S.A',
-    'Comidas S.A',
+    'OLX Autos S.A',
+    'Shunn Autos SPA',
+    'Automotriz Petersens S.A',
+    'AutoFruti INC',
+    'FacsAutos S.A',
+    'TitoAutos S.A',
   ];
   public imagenBase64 = '';
   public cargandoImagen = false;
@@ -36,13 +36,15 @@ export class AgregaProductoPage implements OnInit {
         nombre : new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
         foto : new FormControl('', Validators.required),
         marca : new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
-        precio_compra : new FormControl(0, [Validators.required, Validators.min(500), Validators.max(200000)]),
-        precio_venta : new FormControl(0,[Validators.required, Validators.min(500),Validators.max(500000)]),
+        precio_compra : new FormControl(0, [Validators.required, Validators.min(500), Validators.max(20000000)]),
+        precio_venta : new FormControl(0,[Validators.required, Validators.min(500),Validators.max(50000000)]),
         largo : new FormControl(0, [Validators.required, Validators.min(1), Validators.max(400)]),
         ancho : new FormControl(0, [Validators.required, Validators.min(1), Validators.max(400)]),
+        color : new FormControl ('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
         proveedor : new FormControl('',Validators.required),
-        stock : new FormControl(0, [Validators.required, Validators.min(1), Validators.max(10000)]),
-        fecha_elaboracion : new FormControl(2014,[Validators.required,Validators.min(2014)])
+        patente : new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(6)]),
+        fecha_fabricacion : new FormControl(1940,[Validators.required,Validators.min(1940)]),
+
       })
     }
 

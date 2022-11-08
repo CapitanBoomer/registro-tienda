@@ -6,9 +6,10 @@ export interface Producto {
   precio_venta : number;
   largo : number;
   ancho : number;
+  color : string;
   proveedor : string;
-  stock : number ;
-  fecha_elaboracion : number;
+  patente: string ;
+  fecha_fabricacion : number;
 }
 
 export interface ProductoConId extends Producto{

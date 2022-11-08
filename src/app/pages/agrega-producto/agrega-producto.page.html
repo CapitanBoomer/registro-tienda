@@ -221,53 +221,83 @@
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Stock</ion-label>
-      <ion-input type="number" formControlName="stock"></ion-input>
-      <ion-note slot="error" *ngIf="campo('stock').invalid &&
-                      campo('stock').errors  &&
-                      campo('stock').errors.required &&
-                      tocado('stock')
+      <ion-label position="floating">Color</ion-label>
+      <ion-input type="text" formControlName="color"></ion-input>
+      <ion-note slot="error" *ngIf="campo('color').invalid &&
+                      campo('color').errors  &&
+                      campo('color').errors.required &&
+                      tocado('color')
 
       ">
         Este campo es requerido
       </ion-note>
-      <ion-note slot="error" *ngIf="campo('stock').invalid &&
-                      campo('stock').errors  &&
-                      campo('stock').errors.max &&
-                      tocado('stock')
+      <ion-note slot="error" *ngIf="campo('color').invalid &&
+                      campo('color').errors  &&
+                      campo('color').errors.maxlegth&&
+                      tocado('color')
 
       ">
-        El stock máximo es de 10000 unidades
+      No cumple el máximo de caracteres
       </ion-note>
-      <ion-note slot="error" *ngIf="campo('stock').invalid &&
-                      campo('stock').errors  &&
-                      campo('stock').errors.min &&
-                      tocado('stock')
+      <ion-note slot="error" *ngIf="campo('color').invalid &&
+                      campo('color').errors  &&
+                      campo('color').errors.minlegth&&
+                      tocado('color')
 
       ">
-        El stock mínimo es de 1
+      No cumple el mínimo de caracteres
       </ion-note>
 
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Fecha elaboración</ion-label>
-      <ion-datetime formControlName="fecha_elaboracion"presentation="month-year"></ion-datetime>
-      <ion-note slot="error" *ngIf="campo('fecha_elaboracion').invalid &&
-                      campo('fecha_elaboracion').errors  &&
-                      campo('fecha_elaboracion').errors.required &&
-                      tocado('fecha_elaboracion')
+      <ion-label position="floating">fecha_fabricacion</ion-label>
+      <ion-datetime formControlName="fecha_fabricacion"presentation="month-year"></ion-datetime>
+      <ion-note slot="error" *ngIf="campo('fecha_fabricacion').invalid &&
+                      campo('fecha_fabricacion').errors  &&
+                      campo('fecha_fabricacion').errors.required &&
+                      tocado('fecha_fabricacion')
 
       ">
         Este campo es requerido
       </ion-note>
-      <ion-note slot="error" *ngIf="campo('fecha_elaboracion').invalid &&
-                      campo('fecha_elaboracion').errors  &&
-                      campo('fecha_elaboracion').errors.min &&
-                      tocado('fecha_elaboracion')
+      <ion-note slot="error" *ngIf="campo('fecha_fabricacion').invalid &&
+                      campo('fecha_fabricacion').errors  &&
+                      campo('fecha_fabricacion').errors.min &&
+                      tocado('fecha_fabricacion')
 
       ">
         El año mínimo de elaboración es de 2014
+      </ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Patente</ion-label>
+      <ion-input type="text" formControlName="patente"></ion-input>
+      <ion-note slot="error" *ngIf="campo('patente').invalid &&
+                      campo('patente').errors  &&
+                      campo('patente').errors.required &&
+                      tocado('patente')
+
+      ">
+        Este campo es requerido
+      </ion-note>
+      <ion-note slot="error" *ngIf="campo('patente').invalid &&
+                      campo('patente').errors  &&
+                      campo('patente').errors.minlegth&&
+                      tocado('patente')
+
+      ">
+      No cumple el mínimo de caracteres
+      </ion-note>
+
+      <ion-note slot="error" *ngIf="campo('patente').invalid &&
+                      campo('patente').errors  &&
+                      campo('patente').errors.maxlegth&&
+                      tocado('patente')
+
+      ">
+      No cumple el máximo de caracteres
       </ion-note>
     </ion-item>
 
