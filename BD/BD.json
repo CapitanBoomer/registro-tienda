@@ -5,30 +5,6 @@
       "nombre_usuario": "diego",
       "pass": "contra",
       "admin": true
-    },
-    {
-      "nombre_usuario": "erer",
-      "pass": 4806,
-      "id": 2,
-      "admin": true
-    },
-    {
-      "nombre_usuario": "tia clay",
-      "pass": 4806,
-      "admin": true,
-      "id": 3
-    },
-    {
-      "nombre_usuario": "olislos",
-      "pass": 20,
-      "admin": false,
-      "id": 4
-    },
-    {
-      "nombre_usuario": "prueba",
-      "pass": 4806,
-      "admin": true,
-      "id": 5
     }
   ],
   "productos": [

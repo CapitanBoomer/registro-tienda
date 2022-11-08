@@ -13,9 +13,8 @@ export class ModificaProductoPage implements OnInit {
 
   public idActiva =0;
   public productoActivo!: ProductoConId;
-
-
   public formulario : FormGroup;
+
   public proveedores : Array<string> = [
     'OLX Autos S.A',
     'Shunn Autos SPA',
